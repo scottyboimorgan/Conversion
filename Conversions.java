@@ -186,7 +186,7 @@ public class Conversions //extends HttpServlet
      */
     private float string2Float(String s){
         float num1; // temporary variable
-        num1 = (Float.valueOf (s).floatValue ());
+        num1 = Float.parseFloat(s);
         return num1;
     }
 
@@ -249,7 +249,7 @@ public class Conversions //extends HttpServlet
             choice = getMenuChoice();
             switch(choice){
                 case 0:
-                    System.out.println("Program terminated");
+                    System.out.println("Thank you for using Conversions.java\nBye!");
                     break;
                 case 1:
                     finishConversion(convertF2C(getValueForConversion()), "C");
