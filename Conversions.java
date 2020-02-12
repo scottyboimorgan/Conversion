@@ -1,4 +1,4 @@
-/** *****************************************************************
+/* *****************************************************************
  conversion.java
  Converts various measures from one unit to another
 
@@ -193,7 +193,7 @@ public class Conversions //extends HttpServlet
     /**
      * Displays the UI menu with the options listed as integer values
      */
-    public static void menuDisplay(){
+    private static void menuDisplay(){
         System.out.println("MEASUREMENT CONVERSION");
         System.out.println("1.\tFahrenheit (F) to Celsius (C)");
         System.out.println("2.\tCelsius (C) to Fahrenheit (F)");
@@ -216,8 +216,8 @@ public class Conversions //extends HttpServlet
      * Gets the user's menu choice
      * @return the number of the menu choice
      */
-    public static int getMenuChoice(){
-        int ans = -1;
+    private static int getMenuChoice(){
+        int ans;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter menu number to choose conversion");
         ans = Integer.parseInt(sc.next());
@@ -229,7 +229,7 @@ public class Conversions //extends HttpServlet
      * @return The string entered by the user to use for conversion, does not type check as the
      * original servelet does not account for this either
      */
-    public String getValueForConversion(){
+    private String getValueForConversion(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value you would like to convert:");
         return sc.next();
@@ -240,7 +240,7 @@ public class Conversions //extends HttpServlet
      * a different measurement is converted. The newly converted value's abbreviation will appear
      * after the new value.
      */
-    public void menuOpsForConversions(){
+    private void menuOpsForConversions(){
         int choice = -1;
         while(choice != 0){
             menuDisplay();
@@ -328,7 +328,7 @@ public class Conversions //extends HttpServlet
 
     /**
      * Main method for calling the UI
-     * @param args
+     * @param args CLI
      */
     public static void main(String[]args){
         Conversions c = new Conversions();
