@@ -214,17 +214,9 @@ public class Conversions //extends HttpServlet
     // small weight
     private float convertOz2G (String ozAsStr)
     {  // Convert ounces to grams
-        float num1, num2; // temporary variables
-        int n; // temporary variable
-        // Round to 2 digits past decimal
-        num1 = (Float.valueOf (ozAsStr).floatValue ());
-        n    = Math.round(num1 * (float)100.0);
-        num1 = (float) (n / (float)100.0);
-        // Convert
+        float num2;
+        float num1 = string2Float(ozAsStr);
         num2 = (float) (num1 * 28.35);
-        // Back to 2 digits
-        n    = Math.round(num2 * (float)100.0);
-        num2 = (float) (n / (float)100.0);
         return(num2);
     }
 
