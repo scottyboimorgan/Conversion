@@ -263,18 +263,25 @@ public class Conversions //extends HttpServlet
 
     private float convertK2Lb (String kgAsStr)
     {  // Convert kilograms to pounds
-        float num1, num2; // temporary variables
-        int n; // temporary variable
-        // Round to 2 digits past decimal
-        num1 = (Float.valueOf (kgAsStr).floatValue ());
-        n    = Math.round(num1 * (float)100.0);
-        num1 = (float) (n / (float)100.0);
+        float num2;
+        float num1 = string2Float(kgAsStr);
+        int n;
         // Convert
         num2 = (float) (num1 * 2.205);
-        // Back to 2 digits
-        n    = Math.round(num2 * (float)100.0);
-        num2 = (float) (n / (float)100.0);
+        // Back to 2 digits14
+       // n    = Math.round(num2 * (float)10000.0000);
+       // num2 =  (n / (float)10000.0000);
         return(num2);
+    }
+
+    private float string2Float(String s){
+        float num1; // temporary variables
+        int n; // temporary variable
+        // Round to 2 digits past decimal
+        num1 = (Float.valueOf (s).floatValue ());
+       // n    = Math.round(num1 * (float)10000.0000);
+        //num1 = (float) (n / (float)10000.0000);
+        return num1;
     }
 
     /**
@@ -376,11 +383,32 @@ public class Conversions //extends HttpServlet
                     System.out.println(convertLb2K(getValueForConversion()) + " kg");
                     break;
                 case 14:
-                    System.out.println(convertK2Lb(getValueForConversion()) + " lbs");
+
                     break;
             }
         }
 
+    }
+
+    private void finishConversion(float f, String unit, String numDecimalPlaces){
+        int places = Integer.parseInt(numDecimalPlaces);
+        switch(places){
+            case 0:
+                System.out.printf("%.0f " + unit + "\n", convertK2Lb(getValueForConversion()));
+                break;
+            case 1:
+                System.out.printf("%.1f " + unit + "\n", convertK2Lb(getValueForConversion()));
+                break;
+            case 2:
+                System.out.printf("%.2f " + unit + "\n", convertK2Lb(getValueForConversion()));
+                break;
+            case 3:
+                System.out.printf("%.3f " + unit + "\n", convertK2Lb(getValueForConversion()));
+                break;
+            case 4:
+                System.out.printf("%.4f " + unit + "\n", convertK2Lb(getValueForConversion()));
+                break;
+        }
     }
 
     /**
