@@ -209,6 +209,8 @@ public class Conversions //extends HttpServlet
         System.out.println("12.\tGrams (g) to Ounces (oz)");
         System.out.println("13.\tPounds (lb) to Kilograms (kg)");
         System.out.println("14.\tKilograms (kg) to Pounds (lbs)");
+        System.out.println("15.\tMiles per hour (mph) to Kilometers per hour(km/h)");
+        System.out.println("16.\tKilometers per hour (km/h) to Miles per hour (mph)");
         System.out.println("0.\tEXIT PROGRAM");
     }
 
@@ -290,6 +292,12 @@ public class Conversions //extends HttpServlet
                     break;
                 case 14:
                     finishConversion(convertK2Lb(getValueForConversion()), "lbs");
+                    break;
+                case 15:
+                    finishConversion(convertM2K(getValueForConversion()),  "km/h");
+                    break;
+                case 16:
+                    finishConversion(convertK2M(getValueForConversion()),  "mph");
                     break;
             }
         }
