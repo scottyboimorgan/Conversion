@@ -31,14 +31,15 @@ import java.lang.*;
 // CONSTRUCTOR: no constructor specified (default)
 //
 // ****************  PUBLIC OPERATIONS  **********************************
-// void  doGet()      --> Uses PrintHead() and PrintForm() to print the screen
-// void  PrintHead()  --> Generates the head of the web page
-// void  PrintForm()  --> Generates the form of the web page
-// void  doPost()     --> Handles the conversions
-// float convertX2Y() --> One for each conversion pair
+// void  menuDisplay()             --> Displays the UI menu with the options listed as integer values
+// int getMenuChoice()             --> Takes menu selection input from user
+// String getValueForConversion()  --> Gets the users input to convert from one measurement to another
+// void menuOpsForConversions()    --> Selects the proper conversion method based on user selection
+// void finishConversion(          --> Checks for the user's desired number of decimal places and prints the converted value
+// float convertX2Y()              --> One for each conversion pair
+// void main()                     --> Main method for calling the UI
 //*************************************************************************
 //
-// The possible IOException on the PrintWriter is thrown up.
 
 /**
  *
