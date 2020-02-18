@@ -52,7 +52,7 @@ public class Conversions //extends HttpServlet
      *  Conversion methods below
      *  14 methods, 2 for each pair of units
      ********************************************************* */
-    private float convertF2C (String FAsStr)
+    public float convertF2C (String FAsStr)
     {  // Convert fahrenheit to celsius
         float num2;
         float num1 = string2Float(FAsStr);
@@ -61,7 +61,7 @@ public class Conversions //extends HttpServlet
         return (num2);
     }
 
-    private float convertC2F (String CAsStr)
+    public float convertC2F (String CAsStr)
     {  // Convert celsius to fahrenheit
         float num2;
         float num1 = string2Float(CAsStr);
@@ -71,7 +71,7 @@ public class Conversions //extends HttpServlet
     }
 
     // small distance
-    private float convertIn2Cm (String inAsStr)
+    public float convertIn2Cm (String inAsStr)
     {  // Convert inches to centimeters
         float num2;
         float num1 = string2Float(inAsStr);
@@ -80,7 +80,7 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
-    private float convertCm2In (String cmAsStr)
+    public float convertCm2In (String cmAsStr)
     {  // Convert centimeters to inches
         float num2;
         float num1 = string2Float(cmAsStr);
@@ -90,7 +90,7 @@ public class Conversions //extends HttpServlet
     }
 
     // medium distance
-    private float convertF2M (String ftAsStr)
+    public float convertF2M (String ftAsStr)
     {  // Convert feet to meters
         float num2;
         float num1 = string2Float(ftAsStr);
@@ -99,7 +99,7 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
-    private float convertM2F (String mAsStr)
+    public float convertM2F (String mAsStr)
     {  // Convert meters to feet
         float num2;
         float num1 = string2Float(mAsStr);
@@ -109,7 +109,7 @@ public class Conversions //extends HttpServlet
     }
 
     // large distance
-    private float convertM2K (String miAsStr)
+    public float convertM2K (String miAsStr)
     {  // Convert miles to kilometers
         float num2;
         float num1 = string2Float(miAsStr);
@@ -118,7 +118,7 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
-    private float convertK2M (String kmAsStr)
+    public float convertK2M (String kmAsStr)
     {  // Convert kilometers to miles
         float num2;
         float num1 = string2Float(kmAsStr);
@@ -127,7 +127,7 @@ public class Conversions //extends HttpServlet
     }
 
     // volume
-    private float convertG2L (String galAsStr)
+    public float convertG2L (String galAsStr)
     {  // Convert gallons to liters
         float num2;
         float num1 = string2Float(galAsStr);
@@ -136,7 +136,7 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
-    private float convertL2G (String LAsStr)
+    public float convertL2G (String LAsStr)
     {  // Convert liters to gallons
         float num2; // temporary variables
         float num1 = string2Float(LAsStr);
@@ -145,7 +145,7 @@ public class Conversions //extends HttpServlet
     }
 
     // small weight
-    private float convertOz2G (String ozAsStr)
+    public float convertOz2G (String ozAsStr)
     {  // Convert ounces to grams
         float num2;
         float num1 = string2Float(ozAsStr);
@@ -153,7 +153,7 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
-    private float convertG2Oz (String gAsStr)
+    public float convertG2Oz (String gAsStr)
     {  // Convert grams to ounces
         float num2; // temporary variables
         float num1 = string2Float(gAsStr);
@@ -162,7 +162,7 @@ public class Conversions //extends HttpServlet
     }
 
     // medium weight
-    private float convertLb2K (String lbAsStr)
+    public float convertLb2K (String lbAsStr)
     {  // Convert pounds to kilograms
         float num2;
         float num1 = string2Float(lbAsStr);
@@ -171,7 +171,7 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
-    private float convertK2Lb (String kgAsStr)
+    public float convertK2Lb (String kgAsStr)
     {  // Convert kilograms to pounds
         float num2;
         float num1 = string2Float(kgAsStr);
