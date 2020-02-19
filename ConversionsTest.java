@@ -114,6 +114,51 @@ public class ConversionsTest {
     }
 
     /**
+     * This Test covers conversion Meters <--> Feet
+     */
+    @Test
+    public void testMediumDistanceConversions(){
+        a = c.convertM2F("0");
+        assertEquals(0, a, 0);
+        a = c.convertF2M("0");
+        assertEquals(0, a, 0);
+        a = c.convertM2F("1");
+        assertEquals(3.2808, a, 0.001);
+        a = c.convertF2M("1");
+        assertEquals(0.3048, a, 0.001);
+        a = c.convertF2M("-10");
+        assertEquals(-3.048, a,0.001);
+        a = c.convertM2F("-10");
+        assertEquals(-32.8084, a, 0.001);
+        try {
+            a = c.convertF2M(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertM2F(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertF2M("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertM2F("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
+    /**
      * This test covers the miles to km conversion, km to miles, MPH to KM/H, and KM/H to MPH
      * The speed conversions call the same methods as the distance conversions, so they will
      * not have their own test method.
@@ -160,6 +205,52 @@ public class ConversionsTest {
         catch(NumberFormatException e){
         }
     }
+
+    /**
+     * This test covers the conversions Gallons <--> Liters
+     */
+    @Test
+    public void testVolumeConversions(){
+        a = c.convertG2L("0");
+        assertEquals(0, a, 0.001);
+        a = c.convertL2G("0");
+        assertEquals(0, a, 0.001);
+        a = c.convertG2L("1");
+        assertEquals(3.785, a, 0.001);
+        a = c.convertL2G("1");
+        assertEquals(0.264, a, 0.001);
+        a = c.convertG2L("-1");
+        assertEquals(-3.785, a,0.001);
+        a = c.convertL2G("-1");
+        assertEquals(-0.264, a, 0.001);
+        try {
+            a = c.convertOz2G(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertG2Oz(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertOz2G("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertG2Oz("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
 
     /**
      * Tests the oz to grams conversions and grams to oz
