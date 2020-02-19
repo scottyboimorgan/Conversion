@@ -67,6 +67,10 @@ public class ConversionsTest {
         }
     }
 
+    /**
+     * This Test covers both the inches to cm conversion method
+     * and the cm to inches conversion methods
+     */
     @Test
     public void testSmallDistanceConversions(){
         a = c.convertCm2In("0");
@@ -74,13 +78,13 @@ public class ConversionsTest {
         a = c.convertIn2Cm("0");
         assertEquals(0, a, 0);
         a = c.convertCm2In("1");
-        assertEquals(0.3937, a, 0.0001);
+        assertEquals(0.3937, a, 0.001);
         a = c.convertIn2Cm("1");
-        assertEquals(2.54, a, 0.0);
+        assertEquals(2.54, a, 0.001);
         a = c.convertIn2Cm("-10");
         assertEquals(-25.4, a,0);
         a = c.convertCm2In("-10");
-        assertEquals(-3.9370, a, 0.0001);
+        assertEquals(-3.9370, a, 0.001);
         try {
             a = c.convertIn2Cm(null);
             Assert.fail("Should not have null input");
@@ -103,6 +107,54 @@ public class ConversionsTest {
         }
         try{
             a = c.convertCm2In("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
+    /**
+     * This test covers the miles to km conversion, km to miles, MPH to KM/H, and KM/H to MPH
+     * The speed conversions call the same methods as the distance conversions, so they will
+     * not have their own test method.
+     * LESS TESTS = MORE $$$$$$$
+     */
+    @Test
+    public void testLargeDistanceConversions(){
+        a = c.convertK2M("0");
+        assertEquals(0, a, 0);
+        a = c.convertM2K("0");
+        assertEquals(0, a, 0);
+        a = c.convertK2M("10");
+        assertEquals(6.2137, a, 0.0001);
+        a = c.convertM2K("10");
+        assertEquals(16.0934, a, 0.0001);
+        a = c.convertK2M("-10");
+        assertEquals(6.2137, a,0.0001);
+        a = c.convertM2K("-10");
+        assertEquals(-16.0934, a, 0.0001);
+        try {
+            a = c.convertM2K(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertK2M(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertM2K("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertK2M("letters");
             Assert.fail("User must enter a number");
         }
         catch(NumberFormatException e){
