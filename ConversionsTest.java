@@ -67,6 +67,48 @@ public class ConversionsTest {
         }
     }
 
+    @Test
+    public void testSmallDistanceConversions(){
+        a = c.convertCm2In("0");
+        assertEquals(0, a, 0);
+        a = c.convertIn2Cm("0");
+        assertEquals(0, a, 0);
+        a = c.convertCm2In("1");
+        assertEquals(0.3937, a, 0.0001);
+        a = c.convertIn2Cm("1");
+        assertEquals(2.54, a, 0.0);
+        a = c.convertIn2Cm("-10");
+        assertEquals(-25.4, a,0);
+        a = c.convertCm2In("-10");
+        assertEquals(-3.9370, a, 0.0001);
+        try {
+            a = c.convertIn2Cm(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertCm2In(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertIn2Cm("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertCm2In("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
     @After
     public void tearDown(){
         c = null;
