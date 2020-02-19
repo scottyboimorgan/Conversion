@@ -161,6 +161,48 @@ public class ConversionsTest {
         }
     }
 
+    @Test
+    public void testSmallWeightConversions(){
+        a = c.convertOz2G("0");
+        assertEquals(0, a, 0);
+        a = c.convertG2Oz("0");
+        assertEquals(0, a, 0);
+        a = c.convertOz2G("10");
+        assertEquals(283.495, a, 0.0001);
+        a = c.convertG2Oz("10");
+        assertEquals(0.3527, a, 0.0001);
+        a = c.convertOz2G("-10");
+        assertEquals(-283.495, a,0.0001);
+        a = c.convertG2Oz("-10");
+        assertEquals(-0.3527, a, 0.0001);
+        try {
+            a = c.convertOz2G(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertG2Oz(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertOz2G("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertG2Oz("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
     @After
     public void tearDown(){
         c = null;
