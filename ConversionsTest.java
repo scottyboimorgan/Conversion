@@ -23,7 +23,7 @@ public class ConversionsTest {
 
 
     /**
-     * Tests the conversions of temperature
+     * Tests the conversions of temperature (C to F, F to C)
      */
     @Test
     public void testTempConversions(){
@@ -161,6 +161,9 @@ public class ConversionsTest {
         }
     }
 
+    /**
+     * Tests the oz to grams conversions and grams to oz
+     */
     @Test
     public void testSmallWeightConversions(){
         a = c.convertOz2G("0");
