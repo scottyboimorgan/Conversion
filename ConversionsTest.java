@@ -78,13 +78,13 @@ public class ConversionsTest {
         a = c.convertIn2Cm("0");
         assertEquals(0, a, 0);
         a = c.convertCm2In("1");
-        assertEquals(0.3937, a, 0.0001);
+        assertEquals(0.3937, a, 0.001);
         a = c.convertIn2Cm("1");
-        assertEquals(2.54, a, 0);
+        assertEquals(2.54, a, 0.001);
         a = c.convertIn2Cm("-10");
         assertEquals(-25.4, a,0);
         a = c.convertCm2In("-10");
-        assertEquals(-3.9370, a, 0.0001);
+        assertEquals(-3.9370, a, 0.001);
         try {
             a = c.convertIn2Cm(null);
             Assert.fail("Should not have null input");
