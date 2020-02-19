@@ -23,22 +23,22 @@ public class ConversionsTest {
 
 
     /**
-     * Tests the conversions of temperature
+     * Tests the conversions of temperature (C to F, F to C)
      */
     @Test
     public void testTempConversions(){
         a = c.convertC2F("0");
         assertEquals(32.0, a, 0);
         a = c.convertF2C("0");
-        assertEquals(-17.7778, a, 0.0001);
+        assertEquals(-17.7778, a, 0.001);
         a = c.convertF2C("32");
-        assertEquals(0.0, a, 0);
+        assertEquals(0.0, a, 0.001);
         a = c.convertC2F("100");
-        assertEquals(212, a, 0.0);
+        assertEquals(212, a, 0.001);
         a = c.convertC2F("-10");
-        assertEquals(14.0, a,0);
+        assertEquals(14.0, a,0.001);
         a = c.convertF2C("-10");
-        assertEquals(-23.3333, a, 0.0001);
+        assertEquals(-23.3333, a, 0.001);
         try {
             a = c.convertC2F(null);
             Assert.fail("Should not have null input");
@@ -82,7 +82,7 @@ public class ConversionsTest {
         a = c.convertIn2Cm("1");
         assertEquals(2.54, a, 0.001);
         a = c.convertIn2Cm("-10");
-        assertEquals(-25.4, a,0);
+        assertEquals(-25.4, a,0.001);
         a = c.convertCm2In("-10");
         assertEquals(-3.9370, a, 0.001);
         try {
@@ -126,13 +126,13 @@ public class ConversionsTest {
         a = c.convertM2K("0");
         assertEquals(0, a, 0);
         a = c.convertK2M("10");
-        assertEquals(6.2137, a, 0.0001);
+        assertEquals(6.2137, a, 0.001);
         a = c.convertM2K("10");
-        assertEquals(16.0934, a, 0.0001);
+        assertEquals(16.0934, a, 0.001);
         a = c.convertK2M("-10");
-        assertEquals(6.2137, a,0.0001);
+        assertEquals(6.2137, a,0.001);
         a = c.convertM2K("-10");
-        assertEquals(-16.0934, a, 0.0001);
+        assertEquals(-16.0934, a, 0.001);
         try {
             a = c.convertM2K(null);
             Assert.fail("Should not have null input");
@@ -155,6 +155,51 @@ public class ConversionsTest {
         }
         try{
             a = c.convertK2M("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
+    /**
+     * Tests the oz to grams conversions and grams to oz
+     */
+    @Test
+    public void testSmallWeightConversions(){
+        a = c.convertOz2G("0");
+        assertEquals(0, a, 0.001);
+        a = c.convertG2Oz("0");
+        assertEquals(0, a, 0.001);
+        a = c.convertOz2G("10");
+        assertEquals(283.495, a, 0.001);
+        a = c.convertG2Oz("10");
+        assertEquals(0.3527, a, 0.001);
+        a = c.convertOz2G("-10");
+        assertEquals(-283.495, a,0.001);
+        a = c.convertG2Oz("-10");
+        assertEquals(-0.3527, a, 0.001);
+        try {
+            a = c.convertOz2G(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertG2Oz(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertOz2G("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertG2Oz("letters");
             Assert.fail("User must enter a number");
         }
         catch(NumberFormatException e){
