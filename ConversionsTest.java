@@ -43,7 +43,6 @@ public class ConversionsTest {
         string of letters
  */
 
-
     /**
      * Tests the conversions of temperature (C to F, F to C)
      * Observability is addressed by the part of the test where a is assigned to a call of the convertC2F method where
