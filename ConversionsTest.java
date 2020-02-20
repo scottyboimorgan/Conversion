@@ -209,11 +209,11 @@ public class ConversionsTest {
         a = c.convertK2M("10");
         assertEquals(6.2137, a, 0.001);
         a = c.convertM2K("10");
-        assertEquals(16.0934, a, 0.001);
+        assertEquals(16.09, a, 0.001);
         a = c.convertK2M("-10");
-        assertEquals(6.2137, a,0.001);
+        assertEquals(-6.2137, a,0.001);
         a = c.convertM2K("-10");
-        assertEquals(-16.0934, a, 0.001);
+        assertEquals(-16.09, a, 0.001);
         try {
             a = c.convertM2K(null);
             Assert.fail("Should not have null input");
@@ -306,11 +306,11 @@ public class ConversionsTest {
         a = c.convertG2Oz("0");
         assertEquals(0, a, 0.001);
         a = c.convertOz2G("10");
-        assertEquals(283.495, a, 0.001);
+        assertEquals(283.5, a, 0.001);
         a = c.convertG2Oz("10");
         assertEquals(0.3527, a, 0.001);
         a = c.convertOz2G("-10");
-        assertEquals(-283.495, a,0.001);
+        assertEquals(-283.5, a,0.001);
         a = c.convertG2Oz("-10");
         assertEquals(-0.3527, a, 0.001);
         try {
@@ -357,11 +357,11 @@ public class ConversionsTest {
         a = c.convertLb2K("10");
         assertEquals(4.53592, a, 0.001);
         a = c.convertK2Lb("10");
-        assertEquals(22.0462, a, 0.001);
+        assertEquals(22.05, a, 0.001);
         a = c.convertLb2K("-10");
         assertEquals(-4.53592, a,0.001);
         a = c.convertK2Lb("-10");
-        assertEquals(-22.0462, a, 0.001);
+        assertEquals(-22.05, a, 0.001);
         try {
             a = c.convertLb2K(null);
             Assert.fail("Should not have null input");
