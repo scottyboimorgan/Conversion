@@ -18,6 +18,7 @@ import static org.junit.Assert.*;
 // void testLargeDistanceConversions()    --> This test covers the miles to km conversion, km to miles, MPH to KM/H, and KM/H to MPH
 // void testVolumeConversions()           --> This test covers the conversions Gallons <--> Liters
 // void testSmallWeightConversions()      --> Tests the oz to grams conversions and grams to oz
+// void testMediumWeightConversions()     --> Tests the pounds to kilograms conversions and kilograms to pounds
 // void testString2Float()                --> Tests the string2Float method
 //*************************************************************************
 //
@@ -34,7 +35,7 @@ public class ConversionsTest {
     }
 /*
 
-    TEST CASES INPUT DOMAIN FOR CONVERSIONS:
+    INPUT DOMAIN FOR CONVERSIONS:
         null
         a negative number
         a positive number
@@ -45,6 +46,10 @@ public class ConversionsTest {
 
     /**
      * Tests the conversions of temperature (C to F, F to C)
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertC2F method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertC2F
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testTempConversions(){
@@ -91,6 +96,10 @@ public class ConversionsTest {
     /**
      * This Test covers both the inches to cm conversion method
      * and the cm to inches conversion methods
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertCm2In method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertCm2In
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testSmallDistanceConversions(){
@@ -136,6 +145,10 @@ public class ConversionsTest {
 
     /**
      * This Test covers conversion Meters <--> Feet
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertM2F method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertM2F
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testMediumDistanceConversions(){
@@ -183,7 +196,10 @@ public class ConversionsTest {
      * This test covers the miles to km conversion, km to miles, MPH to KM/H, and KM/H to MPH
      * The speed conversions call the same methods as the distance conversions, so they will
      * not have their own test method.
-     * LESS TESTS = MORE $$$$$$$
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertK2M method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertK2M
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testLargeDistanceConversions(){
@@ -229,6 +245,10 @@ public class ConversionsTest {
 
     /**
      * This test covers the conversions Gallons <--> Liters
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertG2L method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertG2L
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testVolumeConversions(){
@@ -275,6 +295,10 @@ public class ConversionsTest {
 
     /**
      * Tests the oz to grams conversions and grams to oz
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertOz2G method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertOz2G
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testSmallWeightConversions(){
@@ -319,7 +343,60 @@ public class ConversionsTest {
     }
 
     /**
+     * Tests the pounds to kilograms conversions and kilograms to pounds
+     * Observability is addressed by the part of the test where a is assigned to a call of the convertLb2K method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the convertLb2K
+     *      * method and the expected output is changed depending on the input.
+     */
+    @Test
+    public void testMediumWeightConversions(){
+        a = c.convertLb2K("0");
+        assertEquals(0, a, 0.001);
+        a = c.convertK2Lb("0");
+        assertEquals(0, a, 0.001);
+        a = c.convertLb2K("10");
+        assertEquals(4.53592, a, 0.001);
+        a = c.convertK2Lb("10");
+        assertEquals(22.0462, a, 0.001);
+        a = c.convertLb2K("-10");
+        assertEquals(-4.53592, a,0.001);
+        a = c.convertK2Lb("-10");
+        assertEquals(-22.0462, a, 0.001);
+        try {
+            a = c.convertLb2K(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try {
+            a = c.convertK2Lb(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.convertLb2K("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+        try{
+            a = c.convertK2Lb("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
+    /**
      * Tests the string2Float method
+     * Observability is addressed by the part of the test where a is assigned to a call of the string2Float method where
+     *      * a specific input value is entered and then compared to the expected output.
+     * Controllability is addressed by the part of the test where different input values are entered into the string2Float
+     *      * method and the expected output is changed depending on the input.
      */
     @Test
     public void testString2Float(){
