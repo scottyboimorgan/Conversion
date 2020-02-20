@@ -1,14 +1,36 @@
+/* *****************************************************************
+ conversionsTest.java
+ tests the Conversions class
+
+ @authors Amine Bourdi, Nestor Maldonado, Scott Morgan
+
+ @version 1.0    February 2020
+  ********************************************************************* */
 import org.junit.*;
 import static org.junit.Assert.*;
 
+// conversionSTest class
+//
+// ****************  PUBLIC TESTS  **********************************
+// void testTempConversions()             --> Tests the conversions of temperature (C to F, F to C)
+// void testSmallDistanceConversions()    --> This Test covers both the inches to cm conversion method and the cm to inches conversion methods
+// void testMediumDistanceConversions()   --> This Test covers conversion Meters <--> Feet
+// void testLargeDistanceConversions()    --> This test covers the miles to km conversion, km to miles, MPH to KM/H, and KM/H to MPH
+// void testVolumeConversions()           --> This test covers the conversions Gallons <--> Liters
+// void testSmallWeightConversions()      --> Tests the oz to grams conversions and grams to oz
+// void testString2Float()                --> Tests the string2Float method
+//*************************************************************************
+//
 public class ConversionsTest {
     Conversions c;
     float a;
+    int b;
 
     @Before
     public void setUp(){
         c = new Conversions();
         a = -1;
+        b = -1;
     }
 /*
 
@@ -18,7 +40,6 @@ public class ConversionsTest {
         a positive number
         0
         string of letters
-
  */
 
 
@@ -296,6 +317,36 @@ public class ConversionsTest {
         catch(NumberFormatException e){
         }
     }
+
+    /**
+     * Tests the string2Float method
+     */
+    @Test
+    public void testString2Float(){
+        a = c.string2Float("0");
+        assertEquals(0, a, 0.001);
+        a = c.string2Float("1.1");
+        assertEquals(1.1, a, 0.001);
+        a = c.string2Float("-1.1");
+        assertEquals(-1.1, a, 0.001);
+        try {
+            a = c.string2Float(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.string2Float("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
+
+
+
 
     @After
     public void tearDown(){

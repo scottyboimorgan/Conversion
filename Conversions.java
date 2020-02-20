@@ -185,7 +185,7 @@ public class Conversions //extends HttpServlet
      * @param s string with a float value
      * @return the float value of the input
      */
-    private float string2Float(String s){
+    public float string2Float(String s){
         float num1; // temporary variable
         num1 = Float.parseFloat(s);
         return num1;
@@ -194,7 +194,7 @@ public class Conversions //extends HttpServlet
     /**
      * Displays the UI menu with the options listed as integer values
      */
-    private static void menuDisplay(){
+    public static void menuDisplay(){
         System.out.println("MEASUREMENT CONVERSION");
         System.out.println("1.\tFahrenheit (F) to Celsius (C)");
         System.out.println("2.\tCelsius (C) to Fahrenheit (F)");
@@ -219,7 +219,7 @@ public class Conversions //extends HttpServlet
      * Gets the user's menu choice
      * @return the number of the menu choice
      */
-    private static int getMenuChoice(){
+    public static int getMenuChoice(){
         int ans;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter menu number to choose conversion");
