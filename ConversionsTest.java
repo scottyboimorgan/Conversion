@@ -421,7 +421,17 @@ public class ConversionsTest {
     }
 
 
+    /*
+        TEST DRIVEN DEVELOPMENT ASSIGNMENT
 
+     */
+
+
+    @Test
+    public void testMPG2KPL(){
+        a = c.convertMPG2KPL("0");
+        assertEquals(0, a, .001);
+    }
 
 
     @After
