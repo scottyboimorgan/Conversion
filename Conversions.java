@@ -181,8 +181,12 @@ public class Conversions //extends HttpServlet
     }
 
     public float convertMPG2KPL (String mpgAsStr){
-
-        return 0;
+        // Convert Miles per gallon to Kilometers per liter
+        float num2;
+        float num1 = string2Float(mpgAsStr);
+        // Convert
+        num2 = (float) (num1 / 2.352);
+        return(num2);
     }
 
     /**
