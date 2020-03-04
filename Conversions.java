@@ -180,6 +180,10 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
+    public float convertMPG2KPL (String mpgAsStr){
+
+    }
+
     /**
      * Converts a string to a float
      * @param s string with a float value
