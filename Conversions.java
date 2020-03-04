@@ -249,6 +249,10 @@ public class Conversions //extends HttpServlet
         System.out.println("14.\tKilograms (kg) to Pounds (lbs)");
         System.out.println("15.\tMiles per hour (mph) to Kilometers per hour(km/h)");
         System.out.println("16.\tKilometers per hour (km/h) to Miles per hour (mph)");
+        System.out.println("17.\tKilometers per liter (kpl) to Miles per gallon (mpg)");
+        System.out.println("18.\tMiles per gallon (mpg) to Kilometers per liter (kpl)");
+        System.out.println("19.\tKelvin (K) to Celsius (C)");
+        System.out.println("20.\tCelsius (C) to Kelvin (K)");
         System.out.println("0.\tEXIT PROGRAM");
     }
 
@@ -336,6 +340,18 @@ public class Conversions //extends HttpServlet
                     break;
                 case 16:
                     finishConversion(convertK2M(getValueForConversion()),  "mph");
+                    break;
+                case 17:
+                    finishConversion(convertKPL2MPG(getValueForConversion()),  "mpg");
+                    break;
+                case 18:
+                    finishConversion(convertMPG2KPL(getValueForConversion()),  "kpl");
+                    break;
+                case 19:
+                    finishConversion(convertK2C(getValueForConversion()),  "C");
+                    break;
+                case 20:
+                    finishConversion(convertC2K(getValueForConversion()),  "K");
                     break;
             }
         }
