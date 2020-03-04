@@ -429,16 +429,9 @@ public class ConversionsTest {
 
     @Test
     public void testMPG2KPL(){
-        a = c.convertMPG2KPL("0");
-        assertEquals(0, a, .001);
-    }
-
-    @Test
-    public void testMPG2KPLOneValue(){
         a = c.convertMPG2KPL("10");
         assertEquals(4.251, a, .001);
     }
-
 
     @After
     public void tearDown(){
