@@ -443,6 +443,29 @@ public class ConversionsTest {
         assertEquals(-4.251, a, .001);
     }
 
+    @Test
+    public void testMPG2KPLInvalidInputs(){
+        a = c.convertMPG2KPL("0");
+        assertEquals(0, a, .001);
+        a = c.convertMPG2KPL("10");
+        assertEquals(4.251, a, .001);
+        a = c.convertMPG2KPL("-10");
+        assertEquals(-4.251, a, .001);
+        try {
+            a = c.string2Float(null);
+            Assert.fail("Should not have null input");
+        }
+        catch(NullPointerException e){
+        }
+
+        try{
+            a = c.string2Float("letters");
+            Assert.fail("User must enter a number");
+        }
+        catch(NumberFormatException e){
+        }
+    }
+
     @After
     public void tearDown(){
         c = null;
