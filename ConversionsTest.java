@@ -426,7 +426,6 @@ public class ConversionsTest {
 
      */
 
-
     @Test
     public void testMPG2KPL(){
         a = c.convertMPG2KPL("0");
@@ -444,26 +443,19 @@ public class ConversionsTest {
     }
 
     @Test
-    public void testMPG2KPLInvalidInputs(){
-        a = c.convertMPG2KPL("0");
-        assertEquals(0, a, .001);
-        a = c.convertMPG2KPL("10");
-        assertEquals(4.251, a, .001);
-        a = c.convertMPG2KPL("-10");
-        assertEquals(-4.251, a, .001);
-        try {
-            a = c.string2Float(null);
-            Assert.fail("Should not have null input");
-        }
-        catch(NullPointerException e){
-        }
+    public void testKPL2MPG(){
+        a = c.convertKPL2MPG("0");
+        assertEquals(0, a, .002);
+    }
 
-        try{
-            a = c.string2Float("letters");
-            Assert.fail("User must enter a number");
-        }
-        catch(NumberFormatException e){
-        }
+    @Test
+    public void testKPL2MPGManyValues(){
+        a = c.convertKPL2MPG("0");
+        assertEquals(0, a, .002);
+        a = c.convertKPL2MPG("10");
+        assertEquals(23.522, a, .002);
+        a = c.convertKPL2MPG("-10");
+        assertEquals(-23.522, a, .002);
     }
 
     @After
