@@ -433,6 +433,16 @@ public class ConversionsTest {
         assertEquals(4.251, a, .001);
     }
 
+    @Test
+    public void testMPG2KPLManyValues(){
+        a = c.convertMPG2KPL("0");
+        assertEquals(0, a, .001);
+        a = c.convertMPG2KPL("10");
+        assertEquals(4.251, a, .001);
+        a = c.convertMPG2KPL("-10");
+        assertEquals(-4.251, a, .001);
+    }
+
     @After
     public void tearDown(){
         c = null;
