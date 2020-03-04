@@ -181,7 +181,7 @@ public class Conversions //extends HttpServlet
     }
 
     public float convertMPG2KPL (String mpgAsStr){
-
+        return -1;
     }
 
     /**
