@@ -198,6 +198,24 @@ public class Conversions //extends HttpServlet
         return(num2);
     }
 
+    public float convertK2C (String kAsStr){
+        // Convert Kelvin to Celsius
+        float num2;
+        float num1 = string2Float(kAsStr);
+        // Convert
+        num2 = (float) (num1 - 273.15);
+        return(num2);
+    }
+
+    public float convertC2K (String CAsStr){
+        // Convert Celsius to Kelvin
+        float num2;
+        float num1 = string2Float(CAsStr);
+        // Convert
+        num2 = (float) (num1 + 273.15);
+        return(num2);
+    }
+
 
     /**
      * Converts a string to a float

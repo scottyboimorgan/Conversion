@@ -458,6 +458,38 @@ public class ConversionsTest {
         assertEquals(-23.522, a, .002);
     }
 
+    @Test
+    public void testK2C(){
+        a = c.convertK2C("0");
+        assertEquals(-273.15, a, .002);
+    }
+
+    @Test
+    public void testK2CManyValues(){
+        a = c.convertK2C("0");
+        assertEquals(-273.15, a, .002);
+        a = c.convertK2C("10");
+        assertEquals(-263.15, a, .002);
+        a = c.convertK2C("-10");
+        assertEquals(-283.15, a, .002);
+    }
+
+    @Test
+    public void testC2K(){
+        a = c.convertC2K("0");
+        assertEquals(273.15, a, .002);
+    }
+
+    @Test
+    public void testC2KManyValues(){
+        a = c.convertC2K("0");
+        assertEquals(273.15, a, .002);
+        a = c.convertC2K("10");
+        assertEquals(283.15, a, .002);
+        a = c.convertC2K("-10");
+        assertEquals(263.15, a, .002);
+    }
+
     @After
     public void tearDown(){
         c = null;
